@@ -1,6 +1,14 @@
 function getCard(){
     return Math.round(Math.random()*9 + 2);
 }
+let  age = 16;
+
+//function ageVerify(){
+    if (age < 21){
+        console.log("You can not enter the club!")
+    }else {
+        console.log("Welcome!")
+    }
 
 let firstCard = getCard();
 let secondCard = getCard();
