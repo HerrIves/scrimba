@@ -1,25 +1,40 @@
-function getCard(){
-    return Math.round(Math.random()*9 + 2);
-}
-let  age = 16;
+let currentCards = getCard();
+let nextCard = getCard();
+let sum = currentCards + nextCard;
 
-//function ageVerify(){
-    if (age < 21){
+function getCard() {
+    return Math.round(Math.random() * 9 + 2);
+}
+
+function ageVerify() {
+    let age = 16;
+    if (age < 21) {
         console.log("You can not enter the club!")
-    }else {
+    } else {
         console.log("Welcome!")
     }
 
-let firstCard = getCard();
-let secondCard = getCard();
-let sum = firstCard + secondCard;
+}
+function startGame() {
 
-console.log(sum);
+    document.getElementById('cards-el').textContent = "Cards: " + currentCards + ' ' + nextCard;
+    document.getElementById('sum-el').innerText = "Sum: " + sum;
 
-if (sum < 21){
-    console.log("Do you want to draw a new card?")
-} else if (sum === 21){
-    console.log("Wohoo! You've got Blackjack!")
-} else {
-    console.log("You're out of the game! 😭")
+    let messageEl = document.getElementById('message-el');
+
+    if (sum < 21) {
+        messageEl.textContent = "Do you want to draw a new card?";
+    } else if (sum === 21) {
+        messageEl.textContent = "Wohoo! You've got Blackjack!";
+    } else {
+        messageEl.textContent = "You're out of the game!";
+    }
+}
+
+function newCard() {
+    console.log('Pick up new Card!');
+    nextCard = getCard();
+    sum = sum + nextCard;
+
+    startGame();
 }
