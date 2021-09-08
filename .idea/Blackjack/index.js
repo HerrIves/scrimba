@@ -27,7 +27,13 @@ function startGame(){
 
 function renderGame() {
 
-    cardsEl.textContent = "Cards: " + cards[0] + ' ' + cards[1];
+    cardsEl.textContent = "Cards: ";
+    for(let i = 0; i < cards.length; i++){
+        console.log(cardsEl.textContent);
+        cardsEl.textContent += cards[i] + " ";
+        console.log(cards[i]);
+        console.log(cardsEl.textContent);
+    }
     sumEl.innerText = "Sum: " + sum;
 
     if (sum < 21) {
