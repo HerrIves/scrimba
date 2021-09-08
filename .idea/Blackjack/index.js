@@ -32,7 +32,7 @@ function renderGame() {
         console.log(cardsEl.textContent);
         cardsEl.textContent += cards[i] + " ";
         console.log(cards[i]);
-        console.log(cardsEl.textContent);
+        console.log(cardsEl.textContent)
     }
     sumEl.innerText = "Sum: " + sum;
 
