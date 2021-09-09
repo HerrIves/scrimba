@@ -1,9 +1,8 @@
-let currentCard = getRandomCard();
-let nextCard = getRandomCard();
-let cards = [currentCard, nextCard];
-let sum = currentCard + nextCard;
+
+let cards = [];
+let sum = 0;
 let hasBlackJack = false;
-let isAlive = true;
+let isAlive = false;
 let messageEl = document.getElementById('message-el');
 let sumEl = document.getElementById('sum-el');
 let cardsEl = document.getElementById('cards-el');
@@ -11,7 +10,7 @@ let cardsEl = document.getElementById('cards-el');
 function getRandomCard() {
     let i = Math.round(Math.random() * 12 + 1);
 
-     if(i === 1){return 10;}
+     if(i === 1){return 11;}
      else if(i > 10){return 10;}
      else return i;
 }
@@ -26,6 +25,12 @@ function ageVerify() {
 }
 
 function startGame(){
+    isAlive = true;
+    let currentCard = getRandomCard();
+    let nextCard = getRandomCard();
+    cards = [currentCard, nextCard];
+    sum = currentCard + nextCard;
+
     renderGame();
 }
 
