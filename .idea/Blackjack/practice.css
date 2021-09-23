@@ -1,0 +1,16 @@
+body{
+    padding: 40px;
+    text-align: center;
+}
+div{
+    border-radius: 10px;
+    margin: 10px 0;
+    height: 30px;
+
+}
+#apple-shelf{
+    background: lightcoral;
+}
+#orange-shelf{
+    background: lightsalmon;
+}
