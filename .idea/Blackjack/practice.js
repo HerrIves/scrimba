@@ -23,12 +23,20 @@ console.log(person.logdata());
 console.log(person.discountF());
 
 let largeCountries = [
-    "China",
+    "Tuvalu",
     "India",
     "USA",
     "Indonesia",
-    "Pakistan"
+    "Monaco"
 ]
+
+largeCountries.shift();
+largeCountries.unshift("China");
+console.log(largeCountries);
+
+largeCountries.pop();
+largeCountries.push("Pakistan");
+console.log(largeCountries);
 
 function outputCountries() {
     for (let i = 0; i < largeCountries.length; i++) {
