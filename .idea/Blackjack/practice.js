@@ -44,3 +44,14 @@ function outputCountries() {
     }
 }
 outputCountries();
+
+function friday13() {
+    let dayOfMonth = Math.round(Math.random() * 31);
+    let weekday =  Math.round(Math.random() * 7);
+    //console.log("dayOfMonth: " +dayOfMonth + " weekday: " + weekday)
+
+    if (dayOfMonth === 13 && weekday === 5) {
+        console.log("😱")
+    }
+}
+friday13();
