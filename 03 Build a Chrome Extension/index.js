@@ -11,10 +11,15 @@ inputBtn.addEventListener("click", function() {
     renderUl();
 })
 
-// Render the leads in the unordered list using ulEl.textContent
+// 1. Create a variable, listItems, to hold all the HTML for the list items
+let listItem = "";
+
 function renderUl(){
-    ulEl.innerText = "";
+
 for (let i = 0; i < myLeads.length; i++) {
-    ulEl.innerHTML += "<li>" + myLeads[i] + "</li>"
+// 2. Add the item to the listItems variable instead of the ulEl.innerHTML
+    listItem += "<li>" + myLeads[i] + "</li>";
 }
+// 3. Render the listItems inside the unordered list using ulEl.innerHTML
+    ulEl.innerHTML = listItem;
 }
