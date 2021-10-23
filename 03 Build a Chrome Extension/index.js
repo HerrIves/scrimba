@@ -20,6 +20,17 @@ deleteBtn.addEventListener("dblclick", function() {
     renderLeads()
 })
 
+// ["lead1", "lead2"] or null
+let leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") )
+console.log(leadsFromLocalStorage)
+// 1. Check if leadsFromLocalStorage is truthy
+// 2. If so, set myLeads to its value and call renderLeads()
+
+if (leadsFromLocalStorage) {
+    myLeads = leadsFromLocalStorage
+    renderLeads()
+}
+
 inputBtn.addEventListener("click", function() {
     myLeads.push(inputEl.value)
     inputEl.value = ""
