@@ -2,10 +2,12 @@ let myLeads = []
 const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-el")
-// 1. Store the delete button in a deleteBtn variable
-const deleteBtn = document.getElementById("delete-btn")
-const leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") )
-const tabBtn = document.getElementById("tab-btn")
+
+// ["lead1", "lead2"] or null
+let leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") )
+console.log(leadsFromLocalStorage)
+// 1. Check if leadsFromLocalStorage is truthy
+// 2. If so, set myLeads to its value and call renderLeads()
 
 if (leadsFromLocalStorage) {
     myLeads = leadsFromLocalStorage
@@ -16,21 +18,6 @@ inputBtn.addEventListener("click", function() {
     myLeads.push(inputEl.value)
     inputEl.value = ""
     localStorage.setItem("myLeads", JSON.stringify(myLeads) )
-    renderLeads()
-})
-
-tabBtn.addEventListener("click", function (){
-    chrome.tabs.query({currentWindow: true, active: true}, function(tabs){
-        myLeads.push(tabs[0].url)
-        inputEl.value = ""
-        localStorage.setItem("myLeads", JSON.stringify(myLeads) )
-        renderLeads()
-    });
-})
-
-deleteBtn.addEventListener("dblclick", function() {
-    localStorage.clear()
-    myLeads = []
     renderLeads()
 })
 
