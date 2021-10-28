@@ -1,13 +1,20 @@
-let myCourses = ["Learn CSS Animations", "UI Design Fundamentals", "Intro to Clean Code"]
-
-// Create a function that takes a single parameter, an array,
-// and logs all the items of the array to the console.
-// Call the function while passing in myCourses as an argument
-
-function logoutArray(array){
-    for(let i = 0; i < array.length; i++){
-        console.log(array[i]);
+let data = [
+    {
+        player: "Jane",
+        score: 52
+    },
+    {
+        player: "Mark",
+        score: 41
     }
-}
+]
 
-logoutArray(myCourses);
+// Fetch the button from the DOM, store it in a variable
+const logBtn = document.getElementById("log-btn");
+// Use addEventListener() to listen for button clicks
+logBtn.addEventListener("click", function(){
+    console.log(
+        data[0].score
+    )
+})
+// Log Jane's score when the button is clicked (via data)
